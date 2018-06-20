@@ -1,0 +1,819 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya:400,700|Playfair+Display&subset=cyrillic');
+
+$aleg: 'Alegreya', serif;
+$playf: 'Playfair Display', serif;
+$proxima: 'proximanovaregular', serif;
+$script: 'scriptina', sans-serif;
+$white: #ffffff;
+$black: #000000;
+$btncolor: #56534c;
+$brown: #56534c;
+$brown_light: #a47d5e;
+$beige: #c9b176;
+$breakfast_p: #c2beba;
+$orange: #d8bba3;
+body{
+	font-size: 16px;
+}
+@mixin text($font, $size, $weight, $color){
+	font-family: $font;
+	font-size: $size;
+	font-weight: $weight;
+	color: $color;
+}
+ul{
+	margin: 0;
+	padding: 0;
+}
+h2{
+	@include text($aleg, 3em, 700, $brown);
+	margin: 0;
+}
+h3{
+	@include text($aleg, 1.5em, inherit, $brown);
+	margin: 0;
+}
+h5{
+	@include text($aleg, 0.875em, 700, $brown_light);
+	margin: 0;
+	text-transform: uppercase;
+}
+p{
+	@include text($proxima, 0.875em, inherit, $brown);
+	line-height: 1.7;
+	margin: 0;
+}
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+.main_column{
+	display: flex;
+	margin: 0 auto;
+}
+.bakery{
+	background: url(../img/header_bg.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: relative;
+	width: 100%;
+	flex-direction: column;
+}
+.bakery{
+	display: flex;
+	justify-content: center;
+	.head{
+		position: relative;
+		z-index: 1000;
+		align-self: flex-start;
+		width: 100%;
+		background-color: rgba($black, .6);
+	}
+	.main_column{
+		justify-content: space-between;
+		align-items: center;
+	}
+	.social{
+		font-size: 0.875em;
+		a{
+			display: inline-block;
+			position: relative;
+			margin-left: 2em;
+			color: $white;
+			transition: color .6s;
+			&:hover{
+				color: $brown_light;
+				transform: rotate(360deg);
+				transition: transform .5s ease-out;
+			}
+		}
+		a:nth-child(1){
+			margin-left: 0;
+		}
+	}
+}
+.logo {
+	a{
+		&:hover{
+			text-decoration: none;
+		}
+	}
+	h5{
+		@include text($script, 1.875em, inherit, $white);
+		letter-spacing: 5px;
+		margin: 0;
+		text-transform: none;
+	}
+}
+.topmenu{
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		li{
+			display: inline-flex;
+			&:after{
+				content: '~';
+				color: $white;
+				margin: auto;
+			}
+			a{
+				@include text($aleg, 0.875em, 400, $white);
+				text-transform: uppercase;
+				padding: 2.14285714em 2.85714286em;
+				transition: color .6s;
+				&:hover{
+					text-decoration: none;
+					color: $brown_light;
+				}
+			}
+		}
+		li:nth-child(5){
+			&:after{
+			content: '';
+			}
+		} 
+	}
+/*mobile menu style*/
+.bakery{
+	/* Menu Appearance */
+	.pushy{
+		position: fixed;
+		right: 0;
+		width: 200px;
+		height: 100%;
+		top: 0;
+		z-index: 9999;
+		background: #191918;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		/*menu movement*/
+  		transform: translate3d(200px, 0, 0);
+  		/*menu movement*/
+  	/* enables momentum scrolling in iOS overflow elements */
+	}
+	.right_menu{
+		display: flex;
+		flex-direction: column;
+		li{
+			&:after{
+				content: '';
+			}
+			a{
+				padding: 1em;
+			}
+		}
+	}
+}
+.menu-btn{
+	display: none;
+	color: $white;
+	background: rgba($black, .6);
+	border: none;
+	margin-right: 1em;
+}
+.pushy-open-right{
+	.logo,
+	.social,
+	.tittle,
+	.border_bottom,
+	.menu-btn,
+	article,
+	section,
+	footer{
+		transform: translate3d(-200px, 0, 0);
+	}
+	.pushy{
+		transform: translate3d(0, 0, 0);
+	}
+}
+/* Menu Transitions */
+.bakery,
+article,
+section,
+footer,
+.pushy,
+.push {
+	transition: transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+}
+
+.pushy-content {
+	transition: visibility 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+}
+/* Site Overlay */
+.site-overlay {
+	display: none;
+}
+.pushy{
+	z-index: 10000;
+}
+.pushy-open-left .site-overlay,
+.pushy-open-right .site-overlay {
+	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	background-color: rgba(0, 0, 0, 0.5);
+	-webkit-animation: fade 500ms;
+	animation: fade 500ms;
+}
+
+@keyframes fade {
+	0% {
+    	opacity: 0;
+  	}
+  	100% {
+    	opacity: 1;
+  	}
+}
+@-webkit-keyframes fade {
+  	0% {
+    	opacity: 0;
+  	}
+  	100% {
+    	opacity: 1;
+  	}
+}
+/*mobile menu style*/
+.tittle{
+	position: relative;
+	width: 100%;
+	align-self: center;
+	.main_column{
+		justify-content: center;
+	}
+	.pastry{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		h1{
+			@include text($playf, 5.75em, 700, $white);
+			margin-bottom: 0;
+			margin-top: 13rem;
+			text-align: center;
+		}
+		.wave{
+			margin: 3.125em 0;
+		}
+		h6{
+			@include text($proxima, 1.5em, inherit, $white);
+			text-align: center;
+			width: 65%;
+			margin: 0;
+			text-shadow: 0px 1px 0px rgba(61, 48, 41, 0.7);
+			line-height: 1.5;
+		}
+		.button{
+			width: 200px;
+			height: 50px;
+			background-color: rgba($btncolor, .53);
+			border: none;
+			margin-top: 5em;
+			margin-bottom: 9em;
+			transition: 0.5s;
+			@include text($aleg, 0.875em, 700, $white);
+			text-transform: uppercase;
+			letter-spacing: 0.25em;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			&:hover{
+				background-color: rgba($brown_light, .8);
+			}
+		}
+	}
+}
+.border_bottom{
+	position: relative;
+	bottom: -55px;
+	width: 106px;
+	align-self: center;
+	z-index: 200;
+	img{
+		width: 100%;
+	}
+}
+/*======article Art of cakes======*/
+#art_cakes{
+	padding: 6.25em 0 6.25em;
+	position: relative;
+	z-index: 200;
+}
+.create_cakes{
+	position: relative;
+	padding: 0;
+	aside{
+		position: relative;
+		h3{
+			font-weight: 700;
+			margin-bottom: 1.5em;
+		}
+		.recipe{
+			margin: 3em 0 2em;
+		}
+		.chef{
+			display: flex;
+			position: relative;
+			justify-content: space-around;
+			align-items: center;
+			margin: 2em 0 1em;
+			img{
+				border-radius: 50px;
+			}
+			h3{
+				font-weight: 400;
+				margin-bottom: 0;
+				&:before{
+					content: '';
+					position: absolute;
+					top: 30%;
+					width: 90px;
+					height: 1px;
+					background-color: $brown_light;
+				}
+				&:after{
+					display: flex;
+					content: '';
+					position: absolute;
+					bottom: 30%;
+					width: 90px;
+					height: 1px;
+					background-color: $brown_light;
+				}
+			}
+		}
+		blockquote{
+			position: relative;
+			margin: 0;
+			padding: 1em;
+			border: none;
+			p{
+				@include text($script, 1.5em, inherit, $brown_light);
+				&:before{
+				content: "\"";
+				@include text($script, 2em, inherit, $brown_light);
+				font-style: italic;
+				position: absolute;
+				top: -20px;
+				left: 40px;
+				}
+				&:after{
+				content: "\"";
+				@include text($script, 2em, inherit, $brown_light);
+				position: absolute;
+				bottom: -50px;
+				right: 40px;
+				}
+			}
+		}
+	}
+}
+.tastes_img{
+	.four{
+		width: 48%;
+		display: inline-block;
+		padding: 0.6em;
+		outline-offset: -25px;
+		outline-width: 4px;
+		outline-style: solid;
+		outline-color: white;
+	}
+	figure{
+		margin: 0;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img{
+			width: 40%;
+			opacity: 0.97;
+		}
+		&:hover img{
+				animation-name: spin;
+				animation-duration: 2600ms;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+		figcaption{
+			position: absolute;
+			bottom: 40%;
+			left: 0;
+			right: 0;
+			@include text($aleg, 1.875em, 400, $beige);
+			text-transform: uppercase;
+		}
+	}
+}
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-180deg);
+	}
+}
+
+/*======article Art of cakes======*/
+
+/*======article tasty pancakes======*/
+
+#perfect_pancakes{
+	background: url(../img/bg_perfect_pancakes.jpg) no-repeat;
+	background-size: cover;
+	padding: 8.75em 0;
+	background-attachment: fixed;
+	z-index: 200;
+}
+.generic{
+	position: relative;
+}
+.pancake{
+	padding: 0;
+	box-shadow: -5px 5px 10px rgba($black, 0.3);
+	background-color: $white;
+	&:before{
+			content: ''; 
+			position: absolute;
+			width: 0;
+			height: 0;
+			bottom: 0;
+			border-bottom: 51px solid white;
+			border-right: 51px solid transparent;
+		}
+	.angle{
+		position: absolute;
+		bottom: -13px;
+		left: -6px;
+	}
+	.img-responsive {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+.main_tasty{
+	background-color: white;
+	position: relative;
+	padding: 0;
+	box-shadow: 0px 5px 10px rgba($black, 0.3);
+
+}
+.tasty{
+	padding: 5em 3.75em 1.875em;
+	background: url(../img/bg_tastes_pancakes.png) bottom right no-repeat;
+	h5{
+		margin: 1em 0 5em;
+	}
+	#tasty_ready{
+		@extend .time_cook.cook;
+		@extend .time_cook.ready;
+		position: absolute!important;
+		top: -50px;
+		right: -50px;
+		box-shadow: 0px 5px 15px rgba($black, 0.4);
+		h5{
+			margin: 0;
+		}
+	}
+}
+.carousel{
+	position: relative;
+	width: 450px;
+	padding: 1em 2em;
+	margin-top: 2.6em;
+	img{
+		width: 90px;
+		display: block;
+		margin: 0 10px;
+	}
+}
+.arrow{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 40px;
+	padding: 0em 0.5em;
+	background: transparent;
+	border-radius: 25px;
+	border: 2px solid #64615b;
+	font-size: 1.9em;
+	color: #64615b;
+	transition: 0.5s;
+	&:hover{
+		border: 2px solid $orange;
+		color: $orange;
+		cursor: pointer;
+	}
+	&:focus{
+		outline: none;
+	}
+}
+.prev{
+	left: 0.2em;
+}
+.next{
+	right: 0.2em;
+}
+.gallery{
+	width: 330px;
+	overflow: hidden;
+	margin: 0 auto;
+	ul{
+		height: 90px;
+		width: 9999px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		transition: margin-left 250ms;
+		/* remove white-space between inline-block'ed li */
+		font-size: 0;
+	}
+	li{
+		display: inline-block;
+	}
+}
+
+/*======article tasty pancakes======*/
+
+/*section breakfast*/
+#breakfast{
+	background: url(../img/breakfast_bg.jpg) no-repeat;
+	background-size: cover;
+	padding: 5.625em 0;
+	z-index: 200;
+}
+.prices{
+	#second_tittle{
+		font-size: 3.75em;
+		color: $white;
+	}
+	h3{
+		font-size: 1.875em;
+		color: $white;
+		font-weight: bold;
+		margin: 2em 0 0.12em;
+	}
+	p{
+		font-size: 1em;
+		color: $breakfast_p;
+		margin-bottom: 1.875em;
+		line-height: 1.2;
+	}
+	h2{
+		font-size: 2.25em;
+		color: $orange;
+		font-weight: 400;
+	}
+}
+.menu{
+	padding: 0;
+}
+.morning{
+	position: relative;
+	z-index: 100;
+	background-image: url(../img/clever.png);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	width: 95%;
+	padding: 1.5em;
+	background-color: #f3f1e9;
+	outline-offset: -10px;
+	outline-width: 2px;
+	outline-style: dashed;
+	outline-color: $brown_light;
+	.description_menu{
+		width: 80%;
+		margin: 4.375em auto 3.75em;
+		h2{
+			font-size: 2.75em;
+			margin-bottom: 1em;
+		}
+		p{
+			width: 80%;
+			margin: 0 auto;
+		}
+		.read{
+			margin-top: 3em;
+			background: transparent;
+			border: 1px solid $brown_light;
+			padding: 1em 4em;
+			@include text($aleg, 1.125em, 700, $brown_light);
+			text-transform: uppercase;
+			transition: 0.7s ease-out 0.5s;
+			&:hover{
+				color: $white;
+				background: $brown_light;
+			}
+		}
+	}
+}
+.head_menu{
+	h5{
+		display: inline-block;
+		margin-top: 4em;
+		margin-bottom: 1em;
+	}
+	.left{
+		margin-left: 6.4em;
+	}
+	.right{
+		margin-right: 6.4em;
+	}
+	img{
+		display: block;
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+.morning_abs{
+	position: absolute;
+	width: 80%;
+	top: 10px;
+	bottom: 10px;
+	right: 15px;
+	z-index: 10;
+	opacity: 0.85;
+}
+.abs2{
+	right: 1px;
+	top: 20px;
+	bottom: 20px;
+	z-index: 1;
+	opacity: 0.80;
+}
+/*section breakfast*/
+/*product*/
+#product{
+	background-color: #f3f1e9;
+	padding-top: 0.625em;
+	z-index: 200;
+}
+.jibarito{
+	background: url(../img/mill.png) top center no-repeat;
+	padding-top: 5.625em;
+	h5{
+		margin-top: 1rem;
+	}
+}
+.single{
+	width: 70%;
+	margin: 0 auto 3.125em;
+	h3{
+		@include text($aleg, 1.875em, 700, $brown_light);
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		margin-top: 1.375rem;
+		margin-bottom: 1.375rem;
+	}
+}
+.round_img{
+	width: 100px;
+	overflow: hidden;
+	border-radius: 50px;
+	margin: 0 auto;
+	box-shadow: 2px 2px 10px rgba($black, .3);
+	img{
+		height: 100px;
+	}
+}
+.time_cook{
+	position: relative;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5.625em;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: space-between;
+	img{
+		position: absolute;
+		z-index: 1;
+		height: 556px;
+		right: 0;
+		border: 10px solid $white;
+		top: 120px;
+		max-width: 100%;
+	}
+	.min_cook{
+		display: flex;
+		justify-self: flex-end;
+		flex-direction: column;
+	}
+	&.cook{
+		position: relative;
+		width: 200px;
+		height: 200px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba($white, .8);
+		z-index: 100;
+		margin-bottom: 3px;
+		h4{
+			@include text($aleg, 1.125em, 700, $brown_light);
+			text-transform: uppercase;
+		}
+		h2{
+			font-size: 3.75em;
+			margin-bottom: 1.5rem;
+			margin-bottom: 0.625rem;
+		}
+		h5{
+			font-size: 1.125em;
+			color: #979285;
+		}
+	}
+	.cook{
+		@extend .time_cook.cook;
+	}
+	&.ready{
+		background: url(../img/time_bg.png) top left no-repeat;
+		background-color: $white;
+		h2{
+			font-size: 5.75em;
+			color: #dfc691;
+		}
+	}
+	.ready{
+		@extend .time_cook.ready;
+	}
+	a{
+		align-self: flex-end;
+		justify-self: flex-start;
+		@include text($aleg, 1.125em, 700, #dfc691);
+		text-transform: uppercase;
+		padding: 1em 2em;
+		background-color: $white;
+		border: 1px dashed #dfc691;
+		transition: .2ms;
+		z-index: 100;
+		margin-left: -20px;
+		transition: 0.6s ease-in-out;
+		&:hover{
+			color: $white;
+			background-color: #dfc691;
+			border-color: $white;
+			text-decoration: none;
+		}
+	}
+}
+/*product*/
+
+/*footer*/
+footer{
+	position: relative;
+	padding: 4.375em 0;
+	background-color: #f3f1e9;
+	z-index: 200;
+}
+.footer_bottom{
+	.logo{
+		display: inline-block;
+		h5{
+			color: $brown;
+			margin: 0 1em;
+		}
+	}
+}
+.bottom_menu{
+	display: inline-block;
+		li{
+			a{
+				color: $brown;
+			}
+			&:after{
+				color: $brown;
+			}
+		}
+		li:nth-child(3){
+			&:after{
+			content: '';
+			}
+		} 
+	&:before{
+		content: '';
+		position: absolute;
+		width: 440px;
+		height: 2px;
+		background-color: rgba($brown_light, 0.3);
+	}
+	&:after{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 440px;
+		height: 2px;
+		background-color: rgba($brown_light, 0.3);
+	}
+}

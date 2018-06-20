@@ -1,0 +1,27 @@
+/* font-family: "fontawesome"; https://everythingfonts.com/font-face*/
+@font-face {
+    font-family: 'fontawesome';
+    src: url('../fonts/fontawesome/fontawesome-webfont.eot');
+    src: url('../fonts/fontawesome/fontawesome-webfont.eot') format('embedded-opentype'),
+         url('../fonts/fontawesome/fontawesome-webfont.woff') format('woff'),
+         url('../fonts/fontawesome/fontawesome-webfont.ttf') format('truetype'),
+}
+@font-face {
+    font-family: 'scriptina';
+    src: url('../fonts/scriptina/scriptina.eot');
+    src: url('../fonts/scriptina/scriptina.eot') format('embedded-opentype'),
+         url('../fonts/scriptina/scriptina.woff2') format('woff2'),
+         url('../fonts/scriptina/scriptina.woff') format('woff'),
+         url('../fonts/scriptina/scriptina.ttf') format('truetype'),
+         url('../fonts/scriptina/scriptina.svg#scriptina') format('svg');
+}
+@font-face {
+    font-family: 'proximanovaregular';
+    src: url('../fonts/proximanova/proximanovaregular.eot');
+    src: url('../fonts/proximanova/proximanovaregular.eot') format('embedded-opentype'),
+         url('../fonts/proximanova/proximanovaregular.woff2') format('woff2'),
+         url('../fonts/proximanova/proximanovaregular.woff') format('woff'),
+         url('../fonts/proximanova/proximanovaregular.ttf') format('truetype'),
+         url('../fonts/proximanova/proximanovaregular.svg#proximanovaregular') format('svg');
+}
+/* font-family: "fontawesome"; */

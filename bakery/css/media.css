@@ -1,0 +1,232 @@
+/*==========  Desktop First Method  ==========*/
+@media only screen and (min-width : 1920px) {
+	
+}
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.carousel{
+		margin-top: 0.3em;
+	}
+	.tasty{
+		padding: 1em;
+	}
+	.topmenu li a{
+		padding: 1em 1em;
+	}
+	.bottom_menu:before,
+	.bottom_menu:after{
+		width: 300px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.bakery .navigation{
+		display: none;
+	}
+	.bakery .nav_mob{
+		display: block;
+	}
+	.bakery .head{
+		position: fixed;
+		top: 0;
+	}
+	.tittle .pastry h1{
+		margin-top: 15rem;
+	}
+	.menu-btn{
+		display: block;
+	}
+	.head{
+		padding: 1em 1em;
+	}
+	.gallery{
+		width: 220px;
+	}
+	.carousel{
+		width: 350px;
+	}
+	.tasty h5{
+		margin-bottom: 1em;
+	}
+	.main_tasty #tasty_ready{
+		display: none;
+	}
+	.time_cook img{
+		height: 400px;
+	}
+	.time_cook .cook{
+		width: 150px;
+		height: 150px;
+	}
+	.bottom_menu:before,
+	.bottom_menu:after{
+		width: 280px;
+	}
+	.time_cook .ready h2{
+		font-size: 4em;
+	}
+	.create_cakes aside blockquote{
+		margin-bottom: 1em;
+	}
+}
+
+@media only screen and (max-width : 980px) {
+	.bottom_menu:before,
+	.bottom_menu:after{
+		width: 250px;
+	}
+	.bottom_menu li a{
+		padding: 1em 0.5em;
+	}
+	.footer_bottom .logo h5{
+		margin: 0 0.3em;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.time_cook{
+		padding-top: 0;
+	}
+	.time_cook img{
+		top: 40px;
+	}
+	.morning{
+		margin-top: 1em;
+	}
+	.footer_bottom .logo{
+		display: block;
+	}
+	.footer_bottom .logo h5{
+		margin: 1em 0.3em;
+	}
+	.single:nth-child(1){
+		margin-top: 1em;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	body{
+		font-size: 12px;
+	}
+	.tittle .pastry h1{
+		margin-top: 7rem;
+		font-size: 4em;
+	}
+	.tittle .pastry .wave{
+		margin: 1em 0;
+	}
+	.tittle .pastry button{
+		margin-top: 2em;
+		margin-bottom: 1em;
+	}
+	.carousel{
+		width: 280px;
+
+	}
+	.gallery{
+		width: 110px;
+	}
+	.tasty{
+		padding-right: 1em;
+		padding-left: 1em;
+	}
+	.time_cook .cook{
+		width: 150px;
+		height: 150px;
+	}
+	.bottom_menu:before,
+	.bottom_menu:after{
+		width: 200px;
+	}
+	.create_cakes aside .chef h3:before,
+	.create_cakes aside .chef h3:after{
+		width: 60px;
+	}
+	.create_cakes aside blockquote p:before{
+		left: 5px;
+	}
+	.create_cakes aside blockquote p:after{
+		right: 10px;
+	}
+}
+
+@media only screen and (max-width : 360px) {
+	.time_cook img{
+		height: 250px;
+	}
+	.time_cook .cook{
+		width: 100px;
+		height: 100px;
+	}
+	.time_cook .cook h2{
+		font-size: 2.5em;
+	}
+	.bottom_menu:before,
+	.bottom_menu:after{
+		width: 180px;
+	}
+	.tastes_img figure figcaption{
+		font-size: 1.5em;
+	}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	.carousel{
+		width: 200px;
+
+	}
+	.morning .description_menu{
+		margin: 0 auto;
+	}
+	.morning .description_menu h2{
+		font-size: 1.8em;
+	}
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+	.main_column{
+		max-width: 470px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	.main_column{
+		max-width: 750px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	.bakery .navigation{
+		display: block !important;
+	}
+	.main_column{
+		max-width: 970px;
+	}
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	.main_column{
+		max-width: 1170px;
+	}
+}
+@media only screen and (min-width : 1920px) {
+	.main_column{
+		max-width: 1260px;
+	}
+}
